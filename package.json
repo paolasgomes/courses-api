@@ -7,7 +7,12 @@
   "scripts": {
     "lint": "npx eslint ./src/**",
     "lint:fix": "npx eslint ./src/** --fix",
-    "start": "tsx watch src/index.ts"
+    "start": "tsx watch src/index.ts",
+    "migrate": "knex migrate:latest",
+    "migrate:make": "knex migrate:make",
+    "migrate:rollback": "knex migrate:rollback",
+    "seed": "knex seed:run",
+    "seed:make": "knex seed:make"
   },
   "keywords": [],
   "author": "",
@@ -27,6 +32,9 @@
     "typescript-eslint": "^8.44.1"
   },
   "dependencies": {
-    "express": "^5.1.0"
+    "express": "^5.1.0",
+    "knex": "^3.1.0",
+    "sqlite3": "^5.1.7",
+    "zod": "^4.1.11"
   }
 }
