@@ -1,12 +1,13 @@
-import express, { type Request, type Response } from 'express';
+import express from 'express';
+import { routes } from './routes';
 
 const app = express();
+const PORT = 3000;
+
 app.use(express.json());
 
-app.get('/health', (req: Request, res: Response) => {
-  res.status(200).json({ status: 'API rodando com sucesso!' });
-});
+app.use(routes);
 
-app.listen(3000, () => {
-  console.log('Servidor rodando na porta 3000');
+app.listen(PORT, () => {
+  console.log(`Servidor rodando na porta ${PORT}`);
 });
